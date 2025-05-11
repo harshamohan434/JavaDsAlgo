@@ -7,15 +7,18 @@ import java.util.List;
 public class NodePractice {
     public static void main(String[] args) {
         NodePractice nodePractice = new NodePractice();
-        List<Integer> values= new ArrayList<>(Arrays.asList(1,2,3));
-        Node node = nodePractice.registerNode(values);
-        nodePractice.printLinkedList(node);
-        Node reverseNode = nodePractice.reverseNode(node);
-        nodePractice.printLinkedList(reverseNode);
+        List<Integer> l1_values= new ArrayList<>(Arrays.asList(7,2,4,3));
+        List<Integer> l2_values= new ArrayList<>(Arrays.asList(5,6,4));
+        Node l1 = nodePractice.registerNode(l1_values);
+        Node l2 = nodePractice.registerNode(l2_values);
+        AddLinkedList addLinkedList = new AddLinkedList();
+
+        Node result = addLinkedList.addTwoNumbers(l1, l2);
+        nodePractice.printLinkedList(result);
 
     }
 
-    private Node reverseNode(Node node){
+    protected Node reverseNode(Node node){
         Node previous = null;
         Node current = node;
         while (current != null){
@@ -27,7 +30,7 @@ public class NodePractice {
         return previous;
     }
 
-    private Node registerNode(List<Integer> values){
+    protected Node registerNode(List<Integer> values){
         Node head = null;
         for (int val : values){
             Node newNode = new Node(val);
@@ -44,10 +47,12 @@ public class NodePractice {
         return head;
     }
 
-    private void printLinkedList(Node head){
+    protected void printLinkedList(Node head){
         while (head !=null){
-            System.out.println("currentVal : "+head.val);
+            System.out.print(head.val + ",");
             head = head.next;
         }
     }
+
+
 }
