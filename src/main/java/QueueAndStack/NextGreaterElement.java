@@ -1,14 +1,12 @@
 package QueueAndStack;
 
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class NextGreaterElement {
 
     public static void main(String[] args) {
         int[] input = {4, 5, 2, 10, 8};
         int[] result = nextGreaterElementRight(input);
-        System.out.println(Arrays.toString(result));
     }
 
     private static int[] nextGreaterElementRight(int[] input){
